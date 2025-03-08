@@ -76,6 +76,11 @@ function compareTexts(leftText, rightText) {
     // Split into lines and find differences
     const leftLines = leftText.split('\n');
     const rightLines = rightText.split('\n');
+
+    // check if the texts are the samex
+    if (leftText === rightText) {
+        alert('The texts are identical!');          
+    }
     
     // Find line-level differences using LCS
     const lineDiff = findLCS(leftLines, rightLines);
@@ -143,17 +148,22 @@ function compareTexts(leftText, rightText) {
                 rightHtml += `<div>${lineHtml || ' '}</div>`;
             }
         }
-    }
+    }   
 
     leftDiffDisplay.innerHTML = leftHtml;
     rightDiffDisplay.innerHTML = rightHtml;
+    leftDiffDisplay.style.width = (((window.innerWidth -80) / 2)) + 'px';
+    rightDiffDisplay.style.width = (((window.innerWidth -80) / 2)) + 'px';
+    leftDiffDisplay.style.overflowX = 'auto';
+    rightDiffDisplay.style.overflowX = 'auto';
+
 
     // Add click handlers to return to edit mode
     const hideHandler = () => {
         leftDiffDisplay.style.display = 'none';
         rightDiffDisplay.style.display = 'none';
-        leftTextArea.style.display = 'block';
-        rightTextArea.style.display = 'block';
+        leftTextArea.style.display = 'block';        
+        rightTextArea.style.display = 'block';       
     };
 
     leftDiffDisplay.addEventListener('click', hideHandler);

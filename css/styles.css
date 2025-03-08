@@ -84,18 +84,28 @@ body {
 }
 
 .text-area {
-    flex: 1;
+    flex: 1;    
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
     line-height: 1.6;
     resize: none;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace;    
+    overflow-x: auto;
+    white-space: nowrap;
+    word-wrap: normal;
+}
+
+pre{
+    white-space: nowrap;
+    word-wrap: normal;
+    overflow-x: auto;
+    resize: none;
 }
 
 .diff-display {
-    flex: 1;
+    /* flex: 1;
     padding: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -104,10 +114,21 @@ body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #fff;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: auto;
     height: 100%;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    white-space: nowrap;
+    word-wrap: normal; */
+    flex: 1;    
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: none;
+    font-family: 'Courier New', Courier, monospace;    
+    overflow-x: auto;
+    white-space: nowrap;
+    word-wrap: normal;
 }
 
 .text-area:focus, .filename-input:focus {
